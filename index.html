@@ -1,48 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ar- web</title>
-    <style>
-        body,html{
-            height: 100vh;
-            border: 2px solid #000;
-            padding: 0.5rem;
-            box-sizing: border-box;
-        }
-    </style>
-    <script>
-        const video = document.getElementById('videoElement');
-
-        navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-            video.srcObject = stream;
-            video.play();
-        })
-        .catch(error => {
-            console.error('Error al acceder a la cámara: ', error);
-        });
-
-    </script>
-</head>
-<body>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    
-
-    <a-scene embedded arjs>
-        <a-marker preset="hiro">
-            <a-entity position="0 0 0">
-            <a-box position="0 0 -1" material="color: red;"></a-box>
-            </a-entity>
-        </a-marker>
-        <a-camera-static autoplay id="videoElement"></a-camera-static>
-    </a-scene>
-
-   <script>
-   </script>
-
+<!-- include A-Frame obviously -->
+<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs>
+    <!-- create your content here. just a box for now -->
+    <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+    <!-- define a camera which will move according to the marker position -->
+    <a-marker-camera preset='hiro'></a-marker-camera>
+  </a-scene>
 </body>
-</html>

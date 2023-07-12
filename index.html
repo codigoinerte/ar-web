@@ -9,19 +9,21 @@
 </head>
 <body>
 
-    <a-scene embedded arjs>
-
+   <script>
         <a-scene embedded arjs>
-            <a-marker preset="hiro">
-                <a-entity position="0 0 0">
-                <a-box position="0 0 -1" material="color: red;"></a-box>
-                </a-entity>
-            </a-marker>
-            <a-camera-static></a-camera-static>
+
+            <a-scene embedded arjs>
+                <a-marker preset="hiro">
+                    <a-entity position="0 0 0">
+                    <a-box position="0 0 -1" material="color: red;"></a-box>
+                    </a-entity>
+                </a-marker>
+                <a-camera-static></a-camera-static>
+            </a-scene>
+
+
         </a-scene>
-
-
-    </a-scene>
+   </script>
 
 </body>
 </html>

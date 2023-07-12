@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ar- web</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@2.0.8/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+
+    <a-scene embedded arjs>
+
+        <a-scene embedded arjs>
+            <a-marker preset="hiro">
+                <a-entity position="0 0 0">
+                <a-box position="0 0 -1" material="color: red;"></a-box>
+                </a-entity>
+            </a-marker>
+            <a-camera-static></a-camera-static>
+        </a-scene>
+
+
+    </a-scene>
+
+</body>
+</html>

@@ -12,20 +12,33 @@
             box-sizing: border-box;
         }
     </style>
+    <script>
+        const video = document.getElementById('videoElement');
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+            video.play();
+        })
+        .catch(error => {
+            console.error('Error al acceder a la cámara: ', error);
+        });
+
+    </script>
 </head>
 <body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     
-    
+
     <a-scene embedded arjs>
         <a-marker preset="hiro">
             <a-entity position="0 0 0">
             <a-box position="0 0 -1" material="color: red;"></a-box>
             </a-entity>
         </a-marker>
-        <a-camera-static></a-camera-static>
+        <a-camera-static autoplay id="videoElement"></a-camera-static>
     </a-scene>
 
    <script>
